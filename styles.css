@@ -1,0 +1,337 @@
+
+:root {
+    --cafe-bg: #F5F0E8;
+    --cafe-card: #E8DCCB;
+    --cafe-brown: #5C4033;
+    --cafe-medium: #8B654A;
+    --cafe-accent: #B89A7A;
+    --cafe-border: #D6C4AF;
+    --cafe-text: #30251F;
+    --cafe-muted: #766455;
+}
+
+.stApp,
+[data-testid="stAppViewContainer"] {
+    background-color: var(--cafe-bg);
+    color: var(--cafe-text);
+}
+
+[data-testid="stHeader"] {
+    background-color: rgba(245, 240, 232, 0.95);
+}
+
+[data-testid="stSidebar"] {
+    background-color: #5C4033;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    background-color: #5C4033;
+}
+
+[data-testid="stSidebar"] * {
+    color: #F5F0E8;
+}
+
+[data-testid="stSidebar"] input,
+[data-testid="stSidebar"] [data-baseweb="select"] > div,
+[data-testid="stSidebar"] [data-baseweb="popover"] {
+    color: #30251F;
+}
+
+[data-testid="stSidebar"] [data-baseweb="select"] span {
+    color: #30251F;
+}
+
+[data-testid="stSidebar"] [data-testid="stExpander"] {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(245, 240, 232, 0.22);
+    border-radius: 10px;
+}
+
+.page-header {
+    background: linear-gradient(120deg, #5C4033, #8B654A);
+    padding: 25px 28px;
+    border-radius: 16px;
+    margin-bottom: 18px;
+    border: 1px solid #A47551;
+}
+
+.page-header h1 {
+    color: #FFF9F0;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.page-header p {
+    color: #E8DCCB;
+    font-size: 1rem;
+    margin: 0;
+}
+
+[data-testid="stMetric"] {
+    background-color: #E8DCCB;
+    border: 1px solid #D6C4AF;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] p {
+    color: #766455;
+}
+
+[data-testid="stMetricValue"] {
+    color: #5C4033;
+}
+
+[data-testid="stMetricDelta"] {
+    font-weight: 600;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: #D6C4AF;
+    border-radius: 14px;
+}
+
+.stButton > button,
+.stDownloadButton > button {
+    background-color: #8B654A;
+    color: #FFFFFF;
+    border: 1px solid #8B654A;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background-color: #5C4033;
+    color: #FFFFFF;
+    border-color: #5C4033;
+}
+
+.stTextInput input,
+.stNumberInput input,
+.stDateInput input,
+.stTextArea textarea {
+    background-color: #FFFCF7;
+    color: #30251F;
+    border-color: #D6C4AF;
+    border-radius: 8px;
+}
+
+[data-baseweb="select"] > div {
+    background-color: #FFFCF7;
+    border-color: #D6C4AF;
+    border-radius: 8px;
+}
+
+[data-testid="stExpander"] {
+    background-color: #EFE5D7;
+    border: 1px solid #D6C4AF;
+    border-radius: 10px;
+}
+
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    border: 1px solid #D6C4AF;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+    color: #5C4033;
+    border-bottom-color: #8B654A;
+}
+
+hr {
+    border-color: #D6C4AF;
+}
+
+.insight {
+    background-color: #E8DCCB;
+    border-left: 4px solid #8B654A;
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: #30251F;
+    margin: 10px 0;
+}
+
+.stCaption,
+[data-testid="stCaptionContainer"] {
+    color: #766455;
+}
+
+
+/* Premium motion system: animations only; the existing brown/cream palette is unchanged. */
+@keyframes riseFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes headerSheen {
+    0%   { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
+    15%  { opacity: .24; }
+    55%  { opacity: .12; }
+    100% { transform: translateX(220%) skewX(-18deg); opacity: 0; }
+}
+
+@keyframes headerGlow {
+    0%, 100% { box-shadow: 0 8px 22px rgba(92, 64, 51, .08); }
+    50%      { box-shadow: 0 12px 30px rgba(92, 64, 51, .16); }
+}
+
+@keyframes accentReveal {
+    from { width: 0; opacity: .35; }
+    to   { width: 100%; opacity: 1; }
+}
+
+/* Header: cinematic entrance with a single restrained light sweep. */
+.page-header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    animation: riseFadeIn 620ms cubic-bezier(.2, .75, .25, 1) both,
+               headerGlow 5.5s ease-in-out 800ms 1;
+    box-shadow: 0 8px 22px rgba(92, 64, 51, .08);
+}
+
+.page-header::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -35%;
+    bottom: -35%;
+    left: 0;
+    width: 32%;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255, 249, 240, .22), transparent);
+    animation: headerSheen 1.6s ease-out 250ms both;
+}
+
+.page-header h1,
+.page-header p {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 28px;
+    bottom: 0;
+    height: 3px;
+    width: calc(100% - 56px);
+    border-radius: 3px;
+    background: rgba(232, 220, 203, .72);
+    transform-origin: left;
+    animation: accentReveal 800ms ease-out 350ms both;
+}
+
+/* Stagger the KPI cards so they arrive as a coordinated group. */
+[data-testid="stHorizontalBlock"] [data-testid="stMetric"] {
+    animation: riseFadeIn 520ms cubic-bezier(.2, .75, .25, 1) both;
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+[data-testid="stHorizontalBlock"] [data-testid="stMetric"]:nth-child(1) { animation-delay: 100ms; }
+[data-testid="stHorizontalBlock"] [data-testid="stMetric"]:nth-child(2) { animation-delay: 180ms; }
+[data-testid="stHorizontalBlock"] [data-testid="stMetric"]:nth-child(3) { animation-delay: 260ms; }
+[data-testid="stHorizontalBlock"] [data-testid="stMetric"]:nth-child(4) { animation-delay: 340ms; }
+[data-testid="stHorizontalBlock"] [data-testid="stMetric"]:nth-child(5) { animation-delay: 420ms; }
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(92, 64, 51, .14);
+    border-color: #B89A7A;
+}
+
+/* Charts and content panels gently enter after the header. */
+[data-testid="stPlotlyChart"],
+[data-testid="stDataFrame"],
+[data-testid="stTable"],
+[data-testid="stVerticalBlockBorderWrapper"] {
+    animation: riseFadeIn 560ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+[data-testid="stPlotlyChart"] {
+    transition: filter 220ms ease, transform 220ms ease;
+}
+
+[data-testid="stPlotlyChart"]:hover {
+    filter: drop-shadow(0 5px 10px rgba(92, 64, 51, .07));
+}
+
+/* Refined interactive feedback for navigation, buttons, and filter controls. */
+[data-testid="stSidebar"] [data-testid="stPageLink"] a,
+[data-testid="stSidebar"] [role="link"] {
+    transition: background-color 180ms ease, transform 180ms ease, opacity 180ms ease;
+    border-radius: 9px;
+}
+
+[data-testid="stSidebar"] [data-testid="stPageLink"] a:hover,
+[data-testid="stSidebar"] [role="link"]:hover {
+    transform: translateX(3px);
+    background-color: rgba(232, 220, 203, .12);
+}
+
+.stButton > button,
+.stDownloadButton > button {
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(48, 37, 31, .16);
+}
+
+.stButton > button:active,
+.stDownloadButton > button:active {
+    transform: translateY(0) scale(.985);
+}
+
+[data-baseweb="select"] > div,
+.stTextInput input,
+.stNumberInput input,
+.stDateInput input,
+.stTextArea textarea {
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+[data-baseweb="select"] > div:focus-within,
+.stTextInput input:focus,
+.stNumberInput input:focus,
+.stDateInput input:focus,
+.stTextArea textarea:focus {
+    box-shadow: 0 0 0 2px rgba(184, 154, 122, .22);
+}
+
+/* Accessibility: disable decorative movement for users who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+    .page-header::before,
+    .page-header h1,
+.page-header p {
+    position: relative;
+    z-index: 1;
+}
+
+.page-header::after {
+        animation: none !important;
+    }
+
+    [data-testid="stMetric"]:hover,
+    [data-testid="stSidebar"] [role="link"]:hover,
+    .stButton > button:hover,
+    .stDownloadButton > button:hover {
+        transform: none;
+    }
+}
