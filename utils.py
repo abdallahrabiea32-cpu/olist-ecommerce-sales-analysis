@@ -5,7 +5,7 @@ import streamlit as st
 
 PROJECT_DIR = Path(__file__).resolve().parent
 DATA_PATH = PROJECT_DIR / "cleaned_data.csv"
-STYLES_PATH = PROJECT_DIR / "assets" / "styles.css"
+STYLES_PATH = PROJECT_DIR / "styles.css"
 
 BROWN_CAFE_PALETTE = [
     "#5C4033",
