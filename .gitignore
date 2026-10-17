@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local secrets
+.streamlit/secrets.toml
+.env
+.env.*
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+
+# Test / build artifacts
+.pytest_cache/
+.coverage
+dist/
+build/
